@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ROOMS } from "@/data/rooms";
@@ -136,12 +135,12 @@ export default function Home() {
           <h1 className="hero-title">{t("heroTitle")}</h1>
           <p className="hero-subtitle">{t("heroSubtitle")}</p>
           <div className="hero-actions">
-            <Link href="/rooms" className="btn btn-primary btn-lg">
+            <a href="/rooms" className="btn btn-primary btn-lg">
               {t("heroExplore")}
-            </Link>
-            <Link href="/booking" className="btn btn-light btn-lg">
+            </a>
+            <a href="/booking" className="btn btn-light btn-lg">
               {t("heroBook")}
-            </Link>
+            </a>
           </div>
         </div>
         <div className="hero-badges">
@@ -349,9 +348,9 @@ export default function Home() {
           </div>
 
           <div className="text-center" style={{ marginTop: "48px" }}>
-            <Link href="/rooms" className="btn btn-outline">
+            <a href="/rooms" className="btn btn-outline">
               {t("btnViewAllRooms")} <i className="fas fa-arrow-right" style={{ marginLeft: "8px" }}></i>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -393,9 +392,9 @@ export default function Home() {
           <h2>{t("ctaTitle")}</h2>
           <p>{t("ctaDesc")}</p>
           <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/booking" className="btn btn-primary btn-lg">
+            <a href="/booking" className="btn btn-primary btn-lg">
               {t("navBookOnline")}
-            </Link>
+            </a>
             <a
               href="https://wa.me/923000000000"
               target="_blank"

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -81,7 +80,7 @@ export default function Navbar() {
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`} id="navbar">
       <div className="container nav-inner">
         {/* Logo */}
-        <Link href="/" className="logo" onClick={closeMenu}>
+        <a href="/" className="logo" onClick={closeMenu}>
           <span className="logo-icon">
             <svg viewBox="0 0 100 100" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "block" }}>
               <path d="M50 8L15 38V88C15 90.2 16.8 92 19 92H81C83.2 92 85 90.2 85 88V38L50 8Z" stroke="var(--accent)" strokeWidth="6" strokeLinejoin="round"/>
@@ -90,15 +89,15 @@ export default function Navbar() {
             </svg>
           </span>
           <span className="logo-text">{t("heroTitle")}</span>
-        </Link>
+        </a>
 
         {/* Desktop Nav Links */}
         <ul className="nav-links">
           {primaryLinks.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className={isActive(link.href) ? "active" : ""}>
+              <a href={link.href} className={isActive(link.href) ? "active" : ""}>
                 {link.label}
-              </Link>
+              </a>
             </li>
           ))}
 
@@ -117,14 +116,14 @@ export default function Navbar() {
             {moreOpen && (
               <div className="nav-dropdown">
                 {moreLinks.map((link) => (
-                  <Link
+                  <a
                     key={link.href}
                     href={link.href}
                     className={`nav-dropdown-item ${isActive(link.href) ? "active" : ""}`}
                     onClick={() => setMoreOpen(false)}
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 ))}
               </div>
             )}
@@ -147,9 +146,9 @@ export default function Navbar() {
             <i className={theme === "dark" ? "fas fa-sun" : "fas fa-moon"}></i>
           </button>
 
-          <Link href="/booking" className="btn btn-primary btn-sm">
+          <a href="/booking" className="btn btn-primary btn-sm">
             {t("navBookNow")}
-          </Link>
+          </a>
         </div>
 
         {/* Hamburger */}
@@ -165,18 +164,18 @@ export default function Navbar() {
       {/* Mobile Menu — all links */}
       <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
         {[...primaryLinks, ...moreLinks].map((link) => (
-          <Link
+          <a
             key={link.href}
             href={link.href}
             className={`mobile-link ${isActive(link.href) ? "active" : ""}`}
             onClick={closeMenu}
           >
             {link.label}
-          </Link>
+          </a>
         ))}
-        <Link href="/booking" className="btn btn-primary mobile-btn" onClick={closeMenu}>
+        <a href="/booking" className="btn btn-primary mobile-btn" onClick={closeMenu}>
           {t("navBookOnline")}
-        </Link>
+        </a>
       </div>
     </nav>
   );

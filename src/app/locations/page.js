@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import Link from "next/link";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 
@@ -127,9 +126,9 @@ export default function Locations() {
                   </div>
 
                   <div className="branch-footer-cta" style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginTop: "8px" }}>
-                    <Link href={`/rooms?location=${branch.id}`} className="btn btn-primary btn-sm" style={{ flex: 1 }}>
+                    <a href={`/rooms?location=${branch.id}`} className="btn btn-primary btn-sm" style={{ flex: 1 }}>
                       {lang === "ur" ? "کمرے دیکھیں" : "View Rooms"}
-                    </Link>
+                    </a>
                     <a
                       href={`https://wa.me/923000000000?text=${encodeURIComponent(lang === "ur" ? `السلام علیکم! مجھے ${branch.name} میں بکنگ کروانی ہے۔` : `Hello! I'd like to book a room at ${branch.name}.`)}`}
                       target="_blank"

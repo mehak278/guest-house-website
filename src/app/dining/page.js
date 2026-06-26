@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import Link from "next/link";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 
@@ -131,9 +130,9 @@ export default function Dining() {
               ? "ہمارے کسی بھی گیسٹ ہاؤس میں چیک ان کرنے پر تمام معزز مہمانوں کو روایتی کشمیری چائے اور لوازمات بالکل مفت پیش کیے جائیں گے۔"
               : "Enjoy a complimentary cup of authentic Kashmiri pink tea or traditional Lahori green tea brewed with cardamom and nuts immediately upon check-in at any of our branches."}
           </p>
-          <Link href="/booking" className="btn btn-primary btn-lg" style={{ marginTop: "24px" }}>
+          <a href="/booking" className="btn btn-primary btn-lg" style={{ marginTop: "24px" }}>
             {t("navBookOnline")}
-          </Link>
+          </a>
         </div>
       </section>
     </>

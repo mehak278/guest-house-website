@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
@@ -11,7 +10,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <Link href="/" className="logo">
+            <a href="/" className="logo">
               <span className="logo-icon">
                 <svg viewBox="0 0 100 100" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "block" }}>
                   <path d="M50 8L15 38V88C15 90.2 16.8 92 19 92H81C83.2 92 85 90.2 85 88V38L50 8Z" stroke="var(--accent)" strokeWidth="6" strokeLinejoin="round"/>
@@ -20,7 +19,7 @@ export default function Footer() {
                 </svg>
               </span>
               <span className="logo-text">{t("heroTitle")}</span>
-            </Link>
+            </a>
             <p>{t("footerBrandDesc")}</p>
             <div className="footer-socials">
               <a href="#" className="social-icon" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
@@ -32,22 +31,22 @@ export default function Footer() {
           <div className="footer-col">
             <h4>{t("footerColLinks")}</h4>
             <ul className="footer-links">
-              <li><Link href="/">{t("navHome")}</Link></li>
-              <li><Link href="/locations">{t("navLocations")}</Link></li>
-              <li><Link href="/rooms">{t("navRooms")}</Link></li>
-              <li><Link href="/dining">{t("navDining")}</Link></li>
-              <li><Link href="/services">{t("navServices")}</Link></li>
-              <li><Link href="/gallery">{t("navGallery")}</Link></li>
+              <li><a href="/">{t("navHome")}</a></li>
+              <li><a href="/locations">{t("navLocations")}</a></li>
+              <li><a href="/rooms">{t("navRooms")}</a></li>
+              <li><a href="/dining">{t("navDining")}</a></li>
+              <li><a href="/services">{t("navServices")}</a></li>
+              <li><a href="/gallery">{t("navGallery")}</a></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h4>{t("footerColGuide")}</h4>
             <ul className="footer-links">
-              <li><Link href="/about">{t("navAbout")}</Link></li>
-              <li><Link href="/attractions">{t("navAttractions")}</Link></li>
-              <li><Link href="/faq">{t("navFaq")}</Link></li>
-              <li><Link href="/contact">{t("navContact")}</Link></li>
+              <li><a href="/about">{t("navAbout")}</a></li>
+              <li><a href="/attractions">{t("navAttractions")}</a></li>
+              <li><a href="/faq">{t("navFaq")}</a></li>
+              <li><a href="/contact">{t("navContact")}</a></li>
             </ul>
           </div>
 

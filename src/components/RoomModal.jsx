@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -95,9 +94,9 @@ export default function RoomModal({ room, onClose }) {
               </span>
               <span className="price-per">/ {room.per === "night" ? (lang === "ur" ? "رات" : "night") : room.per}</span>
             </div>
-            <Link href={`/booking?room=${room.id}`} className="btn btn-primary" onClick={onClose}>
+            <a href={`/booking?room=${room.id}`} className="btn btn-primary" onClick={onClose}>
               {t("navBookNow")}
-            </Link>
+            </a>
           </div>
         </div>
       </div>
