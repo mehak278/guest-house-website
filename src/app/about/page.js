@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect } from "react";
 import { gsap } from "gsap";
@@ -59,7 +59,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Sub Header */}
-      <header className="sub-header" style={{ backgroundImage: "url('images/hotel_lobby.jpg')" }}>
+      <header className="sub-header" style={{ backgroundImage: "url('/images/hotel_lobby.jpg')" }}>
         <div className="sub-header-content">
           <h1 className="sub-header-title">{lang === "ur" ? "ہمارے بارے میں" : "About Our Guest House"}</h1>
           <div className="breadcrumb">
@@ -82,7 +82,7 @@ export default function AboutPage() {
             </div>
             <div className="intro-image-block">
               <div className="intro-image-frame">
-                <img src="images/hotel_lobby.jpg" alt="Lobby view" style={{ aspectRatio: "4/3" }} />
+                <img src="/images/hotel_lobby.jpg" alt="Lobby view" style={{ aspectRatio: "4/3" }} />
               </div>
             </div>
           </div>

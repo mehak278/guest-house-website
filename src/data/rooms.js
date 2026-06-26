@@ -1,4 +1,4 @@
-export const ROOMS = [
+﻿export const ROOMS = [
   {
     id: "standard",
     name: "Standard Room",
@@ -7,11 +7,11 @@ export const ROOMS = [
     per: "night",
     category: "standard",
     location: "lahore",
-    image: "images/standard_room.jpg",
+    image: "/images/standard_room.jpg",
     gallery: [
-      "images/standard_room.jpg",
-      "images/standard_bath.jpg",
-      "images/standard_details.jpg"
+      "/images/standard_room.jpg",
+      "/images/standard_bath.jpg",
+      "/images/standard_details.jpg"
     ],
     description: "A cozy and clean room offering all fundamental comforts — perfect for solo business travellers or couples on short stays.",
     features: ["Single/Double Bed", "Air Conditioning", "Private Bathroom", "Free High-Speed Wi-Fi", "Smart Cable TV", "Daily Housekeeping"],
@@ -26,11 +26,11 @@ export const ROOMS = [
     per: "night",
     category: "deluxe",
     location: "lahore",
-    image: "images/deluxe_room.jpg",
+    image: "/images/deluxe_room.jpg",
     gallery: [
-      "images/deluxe_room.jpg",
-      "images/deluxe_sitting.jpg",
-      "images/deluxe_bath.jpg"
+      "/images/deluxe_room.jpg",
+      "/images/deluxe_sitting.jpg",
+      "/images/deluxe_bath.jpg"
     ],
     description: "Spacious boutique layout featuring premium bedding, fine wooden accents, and an attached modern bathroom with running hot water.",
     features: ["Queen Size Bed", "Air Conditioning", "Luxury Attached Bath", "Free High-Speed Wi-Fi", "Smart TV", "Mini Fridge", "Complimentary Tea"],
@@ -45,11 +45,11 @@ export const ROOMS = [
     per: "night",
     category: "suite",
     location: "lahore",
-    image: "images/family_suite.jpg",
+    image: "/images/family_suite.jpg",
     gallery: [
-      "images/family_suite.jpg",
-      "images/family_lounge.jpg",
-      "images/family_bath.jpg"
+      "/images/family_suite.jpg",
+      "/images/family_lounge.jpg",
+      "/images/family_bath.jpg"
     ],
     description: "Perfect for family tours. Offers two interconnected bedrooms, a private shared lounge area, and full in-room amenities.",
     features: ["2 Queen Beds", "Air Conditioning", "Spacious Attached Bath", "Free Wi-Fi", "Smart TV", "Mini Fridge", "Lounge Seating", "Tea/Coffee Station"],
@@ -64,11 +64,11 @@ export const ROOMS = [
     per: "night",
     category: "executive",
     location: "lahore",
-    image: "images/executive_room.jpg",
+    image: "/images/executive_room.jpg",
     gallery: [
-      "images/executive_room.jpg",
-      "images/executive_workspace.jpg",
-      "images/executive_bath.jpg"
+      "/images/executive_room.jpg",
+      "/images/executive_workspace.jpg",
+      "/images/executive_bath.jpg"
     ],
     description: "Premium executive accommodation designed for corporate professionals, featuring an ergonomic workspace, high-speed Wi-Fi, and total quietness.",
     features: ["King Size Bed", "Climate Control AC", "Attached Luxury Bath", "Ultra-Fast 100Mbps Wi-Fi", "Ergonomic Work Desk", "Cable TV & Fridge", "Free Coffee Maker"],
@@ -83,11 +83,11 @@ export const ROOMS = [
     per: "night",
     category: "suite",
     location: "lahore",
-    image: "images/hotel_lobby.jpg",
+    image: "/images/hotel_lobby.jpg",
     gallery: [
-      "images/hotel_lobby.jpg",
-      "images/deluxe_bath.jpg",
-      "images/executive_workspace.jpg"
+      "/images/hotel_lobby.jpg",
+      "/images/deluxe_bath.jpg",
+      "/images/executive_workspace.jpg"
     ],
     description: "Ultimate luxury lodging in Gulberg. Features exclusive rooftop access, private heated jacuzzi, home theater set, and a dedicated 24/7 butler.",
     features: ["King Size Bed", "Rooftop Access", "Private Jacuzzi", "Dedicated Butler", "Home Theater Set", "High-speed 100Mbps Wi-Fi", "Complimentary Breakfast"],
@@ -102,11 +102,11 @@ export const ROOMS = [
     per: "night",
     category: "suite",
     location: "murree",
-    image: "images/murree_branch.jpg",
+    image: "/images/murree_branch.jpg",
     gallery: [
-      "images/murree_branch.jpg",
-      "images/family_bath.jpg",
-      "images/deluxe_sitting.jpg"
+      "/images/murree_branch.jpg",
+      "/images/family_bath.jpg",
+      "/images/deluxe_sitting.jpg"
     ],
     description: "A cozy rustic stone chalet on Mall Road, Murree. Enjoy mountain views, central heating, pine forest trails, and a traditional brick fireplace.",
     features: ["Rustic Fireplace", "2 King Beds", "Glass Balcony", "Central Heating", "Kashmiri Chai Station", "Luxury Attached Bath", "Free Wi-Fi"],
@@ -121,11 +121,11 @@ export const ROOMS = [
     per: "night",
     category: "suite",
     location: "karachi",
-    image: "images/dining_area.jpg",
+    image: "/images/dining_area.jpg",
     gallery: [
-      "images/dining_area.jpg",
-      "images/family_lounge.jpg",
-      "images/executive_bath.jpg"
+      "/images/dining_area.jpg",
+      "/images/family_lounge.jpg",
+      "/images/executive_bath.jpg"
     ],
     description: "A majestic beachfront villa in Clifton, Karachi. Features private pool access, ocean-view decks, dedicated chef service, and 24/7 power backup.",
     features: ["4 Bedrooms", "Private Pool Access", "Ocean Breeze Deck", "Beach Access", "24/7 Power", "Private Chef Service", "Smart Security"],
@@ -140,11 +140,11 @@ export const ROOMS = [
     per: "night",
     category: "executive",
     location: "islamabad",
-    image: "images/islamabad_branch.jpg",
+    image: "/images/islamabad_branch.jpg",
     gallery: [
-      "images/islamabad_branch.jpg",
-      "images/executive_workspace.jpg",
-      "images/executive_bath.jpg"
+      "/images/islamabad_branch.jpg",
+      "/images/executive_workspace.jpg",
+      "/images/executive_bath.jpg"
     ],
     description: "Luxury corporate accommodation in F-7 Sector, Islamabad. Boasts breathtaking Margalla Hill views, boardroom access, and smart climate control.",
     features: ["King Size Bed", "Margalla Hills View", "Executive Workstation", "Boardroom Access", "Mini Bar & Coffee Setup", "Smart Climate Control", "Premium Sauna Access"],

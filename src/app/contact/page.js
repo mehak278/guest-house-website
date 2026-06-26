@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
@@ -35,7 +35,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Sub Header */}
-      <header className="sub-header" style={{ backgroundImage: "url('images/hotel_lobby.jpg')" }}>
+      <header className="sub-header" style={{ backgroundImage: "url('/images/hotel_lobby.jpg')" }}>
         <div className="sub-header-content">
           <h1 className="sub-header-title">{t("contactTitle")}</h1>
           <div className="breadcrumb">

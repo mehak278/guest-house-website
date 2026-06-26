@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useLanguage } from "@/context/LanguageContext";
 import Link from "next/link";
@@ -24,7 +24,7 @@ export default function Locations() {
       id: "lahore",
       name: t("branchLahoreName"),
       desc: t("branchLahoreDesc"),
-      image: "images/hotel_lobby.jpg",
+      image: "/images/hotel_lobby.jpg",
       address: lang === "ur" ? "123 مین گلبرگ III، لاہور، پاکستان" : "123 Main Gulberg III, Lahore, Pakistan",
       phone: "+92 300 0000000",
       checkin: "2:00 PM",
@@ -38,7 +38,7 @@ export default function Locations() {
       id: "islamabad",
       name: t("branchIslamabadName"),
       desc: t("branchIslamabadDesc"),
-      image: "images/islamabad_branch.jpg",
+      image: "/images/islamabad_branch.jpg",
       address: lang === "ur" ? "F-7 مرکز، اسلام آباد، پاکستان" : "F-7 Markaz, Islamabad, Pakistan",
       phone: "+92 321 0000000",
       checkin: "2:00 PM",
@@ -52,7 +52,7 @@ export default function Locations() {
       id: "karachi",
       name: t("branchKarachiName"),
       desc: t("branchKarachiDesc"),
-      image: "images/dining_area.jpg",
+      image: "/images/dining_area.jpg",
       address: lang === "ur" ? "بلاک 4 کلفٹن، کراچی، پاکستان" : "Block 4 Clifton, Karachi, Pakistan",
       phone: "+92 333 0000000",
       checkin: "2:00 PM",
@@ -66,7 +66,7 @@ export default function Locations() {
       id: "murree",
       name: t("branchMurreeName"),
       desc: t("branchMurreeDesc"),
-      image: "images/murree_branch.jpg",
+      image: "/images/murree_branch.jpg",
       address: lang === "ur" ? "مال روڈ، مری، پنجاب، پاکستان" : "Main Mall Road, Murree, Punjab, Pakistan",
       phone: "+92 345 0000000",
       checkin: "2:00 PM",

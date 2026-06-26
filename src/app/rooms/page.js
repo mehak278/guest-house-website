@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { ROOMS } from "@/data/rooms";
@@ -41,7 +41,7 @@ export default function RoomsPage() {
   return (
     <>
       {/* Sub Header */}
-      <header className="sub-header" style={{ backgroundImage: "url('images/hotel_lobby.jpg')" }}>
+      <header className="sub-header" style={{ backgroundImage: "url('/images/hotel_lobby.jpg')" }}>
         <div className="sub-header-content">
           <h1 className="sub-header-title">{t("roomsTitle")}</h1>
           <div className="breadcrumb">

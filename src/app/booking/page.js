@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
@@ -473,7 +473,7 @@ export default function BookingPage() {
   return (
     <>
       {/* Sub Header */}
-      <header className="sub-header" style={{ backgroundImage: "url('images/hotel_lobby.jpg')" }}>
+      <header className="sub-header" style={{ backgroundImage: "url('/images/hotel_lobby.jpg')" }}>
         <div className="sub-header-content">
           <h1 className="sub-header-title">{t("bookingTitle")}</h1>
           <div className="breadcrumb">

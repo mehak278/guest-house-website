@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function ServicesPage() {
@@ -105,35 +104,23 @@ export default function ServicesPage() {
 
   // GSAP animations
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
+    // Animate service cards immediately on mount
     gsap.from(".service-card", {
-      scrollTrigger: {
-        trigger: ".services-grid",
-        start: "top 80%",
-      },
       opacity: 0,
-      y: 35,
-      stagger: 0.1,
-      duration: 0.8,
+      y: 30,
+      stagger: 0.06,
+      duration: 0.6,
       ease: "power2.out"
     });
 
+    // Animate accordion items immediately on mount
     gsap.from(".accordion-item", {
-      scrollTrigger: {
-        trigger: ".rules-container",
-        start: "top 80%",
-      },
       opacity: 0,
       y: 20,
-      stagger: 0.15,
-      duration: 0.8,
+      stagger: 0.1,
+      duration: 0.6,
       ease: "power2.out"
     });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
   }, []);
 
   const toggleAccordion = (index) => {
@@ -143,7 +130,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Sub Header */}
-      <header className="sub-header" style={{ backgroundImage: "url('images/dining_area.jpg')" }}>
+      <header className="sub-header" style={{ backgroundImage: "url('/images/dining_area.jpg')" }}>
         <div className="sub-header-content">
           <h1 className="sub-header-title">{t("servicesTitle")}</h1>
           <div className="breadcrumb">

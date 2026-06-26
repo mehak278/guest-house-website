@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -130,7 +130,7 @@ export default function Home() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="hero" id="home" style={{ backgroundImage: "url('images/hotel_lobby.jpg')" }}>
+      <section className="hero" id="home" style={{ backgroundImage: "url('/images/hotel_lobby.jpg')" }}>
         <div className="hero-content">
           <p className="hero-tagline">{t("heroTagline")}</p>
           <h1 className="hero-title">{t("heroTitle")}</h1>
@@ -236,7 +236,7 @@ export default function Home() {
             </div>
             <div className="intro-image-block">
               <div className="intro-image-frame">
-                <img src="images/standard_room.jpg" alt="Guest House Interior" loading="lazy" />
+                <img src="/images/standard_room.jpg" alt="Guest House Interior" loading="lazy" />
               </div>
               <div className="floating-badge">
                 <span className="num">5+</span>
@@ -388,7 +388,7 @@ export default function Home() {
       </section>
 
       {/* ─── CTA BANNER ─── */}
-      <section className="cta-banner" style={{ backgroundImage: "url('images/dining_area.jpg')" }}>
+      <section className="cta-banner" style={{ backgroundImage: "url('/images/dining_area.jpg')" }}>
         <div className="cta-content">
           <h2>{t("ctaTitle")}</h2>
           <p>{t("ctaDesc")}</p>

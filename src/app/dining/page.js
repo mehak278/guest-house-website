@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useLanguage } from "@/context/LanguageContext";
 import Link from "next/link";
@@ -24,7 +24,7 @@ export default function Dining() {
       id: "breakfast",
       title: t("foodBreakfastTitle"),
       desc: t("foodBreakfastDesc"),
-      image: "images/dining_area.jpg",
+      image: "/images/dining_area.jpg",
       icon: "fa-egg",
       tags: lang === "ur" ? ["روایتی حلوہ پوری", "نہاری اور پراٹھے", "تازہ میٹھی لسی"] : ["Halwa Puri Platter", "Nihari & Chanay", "Sweet Lassi"],
     },
@@ -32,7 +32,7 @@ export default function Dining() {
       id: "bbq",
       title: t("foodBBQTitle"),
       desc: t("foodBBQDesc"),
-      image: "images/lahore_attractions.jpg",
+      image: "/images/lahore_attractions.jpg",
       icon: "fa-fire",
       tags: lang === "ur" ? ["ملائی چکن بوٹی", "سیخ کباب", "گرم روغنی نان"] : ["Chicken Malai Boti", "Beef Seekh Kebab", "Hot Roghni Naan"],
     },
@@ -40,7 +40,7 @@ export default function Dining() {
       id: "chai",
       title: t("foodChaiTitle"),
       desc: t("foodChaiDesc"),
-      image: "images/standard_room.jpg",
+      image: "/images/standard_room.jpg",
       icon: "fa-mug-hot",
       tags: lang === "ur" ? ["گلابی کشمیری چائے", "بادام اور پستہ ٹاپنگ", "آلو سموسہ پکوڑے"] : ["Brewed Pink Tea", "Almond & Pistachios", "Samosa Platter"],
     },
@@ -48,7 +48,7 @@ export default function Dining() {
       id: "roomservice",
       title: t("foodRoomServiceTitle"),
       desc: t("foodRoomServiceDesc"),
-      image: "images/hotel_lobby.jpg",
+      image: "/images/hotel_lobby.jpg",
       icon: "fa-bell",
       tags: lang === "ur" ? ["24/7 سروس", "چکن کڑھائی و بریانی", "کانٹینینٹل کلب سینڈوچ"] : ["24/7 Active Service", "Chicken Biryani/Karahi", "Continental Club Sandwiches"],
     },
@@ -57,7 +57,7 @@ export default function Dining() {
   return (
     <>
       {/* Dining Hero */}
-      <section className="dining-hero" style={{ backgroundImage: "linear-gradient(rgba(28, 24, 21, 0.6), rgba(28, 24, 21, 0.6)), url('images/dining_area.jpg')" }}>
+      <section className="dining-hero" style={{ backgroundImage: "linear-gradient(rgba(28, 24, 21, 0.6), rgba(28, 24, 21, 0.6)), url('/images/dining_area.jpg')" }}>
         <div className="dining-hero-content">
           <span className="section-label">{t("diningLabel")}</span>
           <h1 className="hero-title">{t("diningTitle")}</h1>
@@ -80,7 +80,7 @@ export default function Dining() {
               </p>
             </div>
             <div className="dining-intro-image">
-              <img src="images/dining_area.jpg" alt="Chef's Dining Area" className="dining-img-frame" />
+              <img src="/images/dining_area.jpg" alt="Chef's Dining Area" className="dining-img-frame" />
             </div>
           </div>
         </div>

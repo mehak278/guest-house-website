@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
@@ -10,23 +10,23 @@ export default function GalleryPage() {
   const { lang, t } = useLanguage();
 
   const galleryItems = [
-    { src: "images/hotel_lobby.jpg",        category: "lobby",  title: lang === "ur" ? "مین لابی"            : "Main Lobby & Reception" },
-    { src: "images/standard_room.jpg",      category: "rooms",  title: lang === "ur" ? "اسٹینڈرڈ کمرہ"      : "Standard Room" },
-    { src: "images/standard_bath.jpg",      category: "rooms",  title: lang === "ur" ? "اسٹینڈرڈ باتھ روم"  : "Standard Bathroom" },
-    { src: "images/standard_details.jpg",   category: "rooms",  title: lang === "ur" ? "کمرے کی تفصیلات"    : "Room Details & Furnishings" },
-    { src: "images/deluxe_room.jpg",        category: "rooms",  title: lang === "ur" ? "ڈیلکس سوئٹ"         : "Deluxe Suite" },
-    { src: "images/deluxe_sitting.jpg",     category: "rooms",  title: lang === "ur" ? "ڈیلکس لاؤنج"        : "Deluxe Sitting Lounge" },
-    { src: "images/deluxe_bath.jpg",        category: "rooms",  title: lang === "ur" ? "ڈیلکس باتھ روم"     : "Deluxe Attached Bathroom" },
-    { src: "images/dining_area.jpg",        category: "dining", title: lang === "ur" ? "ڈائننگ ایریا"       : "Boutique Dining Area" },
-    { src: "images/family_suite.jpg",       category: "rooms",  title: lang === "ur" ? "فیملی سوئٹ"         : "Family Suite" },
-    { src: "images/family_lounge.jpg",      category: "rooms",  title: lang === "ur" ? "فیملی لاؤنج"        : "Family Suite Lounge" },
-    { src: "images/family_bath.jpg",        category: "rooms",  title: lang === "ur" ? "فیملی باتھ روم"     : "Family Suite Bathroom" },
-    { src: "images/executive_room.jpg",     category: "rooms",  title: lang === "ur" ? "ایگزیکٹو روم"       : "Executive Business Room" },
-    { src: "images/executive_workspace.jpg",category: "rooms",  title: lang === "ur" ? "ورک اسپیس"          : "Executive Work Desk" },
-    { src: "images/executive_bath.jpg",     category: "rooms",  title: lang === "ur" ? "ایگزیکٹو باتھ روم"  : "Executive Bathroom" },
-    { src: "images/lahore_attractions.jpg", category: "city",   title: lang === "ur" ? "لاہور کے مناظر"     : "Lahore City Landmark" },
-    { src: "images/islamabad_branch.jpg",   category: "lobby",  title: lang === "ur" ? "اسلام آباد برانچ"   : "Islamabad Branch" },
-    { src: "images/murree_branch.jpg",      category: "city",   title: lang === "ur" ? "مری برانچ"          : "Murree Mountain Branch" },
+    { src: "/images/hotel_lobby.jpg",        category: "lobby",  title: lang === "ur" ? "مین لابی"            : "Main Lobby & Reception" },
+    { src: "/images/standard_room.jpg",      category: "rooms",  title: lang === "ur" ? "اسٹینڈرڈ کمرہ"      : "Standard Room" },
+    { src: "/images/standard_bath.jpg",      category: "rooms",  title: lang === "ur" ? "اسٹینڈرڈ باتھ روم"  : "Standard Bathroom" },
+    { src: "/images/standard_details.jpg",   category: "rooms",  title: lang === "ur" ? "کمرے کی تفصیلات"    : "Room Details & Furnishings" },
+    { src: "/images/deluxe_room.jpg",        category: "rooms",  title: lang === "ur" ? "ڈیلکس سوئٹ"         : "Deluxe Suite" },
+    { src: "/images/deluxe_sitting.jpg",     category: "rooms",  title: lang === "ur" ? "ڈیلکس لاؤنج"        : "Deluxe Sitting Lounge" },
+    { src: "/images/deluxe_bath.jpg",        category: "rooms",  title: lang === "ur" ? "ڈیلکس باتھ روم"     : "Deluxe Attached Bathroom" },
+    { src: "/images/dining_area.jpg",        category: "dining", title: lang === "ur" ? "ڈائننگ ایریا"       : "Boutique Dining Area" },
+    { src: "/images/family_suite.jpg",       category: "rooms",  title: lang === "ur" ? "فیملی سوئٹ"         : "Family Suite" },
+    { src: "/images/family_lounge.jpg",      category: "rooms",  title: lang === "ur" ? "فیملی لاؤنج"        : "Family Suite Lounge" },
+    { src: "/images/family_bath.jpg",        category: "rooms",  title: lang === "ur" ? "فیملی باتھ روم"     : "Family Suite Bathroom" },
+    { src: "/images/executive_room.jpg",     category: "rooms",  title: lang === "ur" ? "ایگزیکٹو روم"       : "Executive Business Room" },
+    { src: "/images/executive_workspace.jpg",category: "rooms",  title: lang === "ur" ? "ورک اسپیس"          : "Executive Work Desk" },
+    { src: "/images/executive_bath.jpg",     category: "rooms",  title: lang === "ur" ? "ایگزیکٹو باتھ روم"  : "Executive Bathroom" },
+    { src: "/images/lahore_attractions.jpg", category: "city",   title: lang === "ur" ? "لاہور کے مناظر"     : "Lahore City Landmark" },
+    { src: "/images/islamabad_branch.jpg",   category: "lobby",  title: lang === "ur" ? "اسلام آباد برانچ"   : "Islamabad Branch" },
+    { src: "/images/murree_branch.jpg",      category: "city",   title: lang === "ur" ? "مری برانچ"          : "Murree Mountain Branch" },
   ];
 
   const filteredItems = filter === "all" ? galleryItems : galleryItems.filter((i) => i.category === filter);
@@ -73,7 +73,7 @@ export default function GalleryPage() {
   return (
     <>
       {/* Sub Header */}
-      <header className="sub-header" style={{ backgroundImage: "url('images/hotel_lobby.jpg')" }}>
+      <header className="sub-header" style={{ backgroundImage: "url('/images/hotel_lobby.jpg')" }}>
         <div className="sub-header-content">
           <h1 className="sub-header-title">{t("galleryTitle")}</h1>
           <div className="breadcrumb">
