@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
@@ -9,164 +9,171 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [theme, setTheme] = useState("light");
+  const [moreOpen, setMoreOpen] = useState(false);
+  const moreRef = useRef(null);
   const pathname = usePathname();
   const { lang, setLang, t } = useLanguage();
 
-  // Scroll Shadow Effect
+  // Scroll shadow
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Theme Init & LocalStorage sync
+  // Theme init
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
     document.documentElement.setAttribute("data-theme", savedTheme);
   }, []);
 
+  // Close "More" dropdown on outside click
+  useEffect(() => {
+    const handleClick = (e) => {
+      if (moreRef.current && !moreRef.current.contains(e.target)) {
+        setMoreOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
   const toggleTheme = () => {
-    const nextTheme = theme === "light" ? "dark" : "light";
-    setTheme(nextTheme);
-    document.documentElement.setAttribute("data-theme", nextTheme);
-    localStorage.setItem("theme", nextTheme);
+    const next = theme === "light" ? "dark" : "light";
+    setTheme(next);
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
   };
 
-  const closeMenu = () => setIsOpen(false);
+  const closeMenu = () => {
+    setIsOpen(false);
+    setMoreOpen(false);
+  };
 
-  // Link Active state checker
   const isActive = (path) => {
     if (path === "/" && pathname === "/") return true;
     if (path !== "/" && pathname.startsWith(path)) return true;
     return false;
   };
 
+  // Primary links always visible in desktop nav
+  const primaryLinks = [
+    { href: "/", label: t("navHome") },
+    { href: "/rooms", label: t("navRooms") },
+    { href: "/dining", label: t("navDining") },
+    { href: "/gallery", label: t("navGallery") },
+    { href: "/contact", label: t("navContact") },
+  ];
+
+  // Secondary links hidden in "More" dropdown
+  const moreLinks = [
+    { href: "/locations", label: t("navLocations") },
+    { href: "/services", label: t("navServices") },
+    { href: "/about", label: t("navAbout") },
+    { href: "/attractions", label: t("navAttractions") },
+    { href: "/faq", label: t("navFaq") },
+  ];
+
+  const isMoreActive = moreLinks.some((l) => isActive(l.href));
+
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`} id="navbar">
       <div className="container nav-inner">
+        {/* Logo */}
         <Link href="/" className="logo" onClick={closeMenu}>
-          <span className="logo-icon">🏡</span>
+          <span className="logo-icon">
+            <svg viewBox="0 0 100 100" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "block" }}>
+              <path d="M50 8L15 38V88C15 90.2 16.8 92 19 92H81C83.2 92 85 90.2 85 88V38L50 8Z" stroke="var(--accent)" strokeWidth="6" strokeLinejoin="round"/>
+              <path d="M35 92V58C35 49.7 41.7 43 50 43C58.3 43 65 49.7 65 58V92" stroke="var(--accent)" strokeWidth="6" strokeLinejoin="round"/>
+              <circle cx="50" cy="26" r="7" fill="var(--accent)"/>
+            </svg>
+          </span>
           <span className="logo-text">{t("heroTitle")}</span>
         </Link>
 
+        {/* Desktop Nav Links */}
         <ul className="nav-links">
-          <li>
-            <Link href="/" className={isActive("/") ? "active" : ""}>
-              {t("navHome")}
-            </Link>
-          </li>
-          <li>
-            <Link href="/locations" className={isActive("/locations") ? "active" : ""}>
-              {t("navLocations")}
-            </Link>
-          </li>
-          <li>
-            <Link href="/rooms" className={isActive("/rooms") ? "active" : ""}>
-              {t("navRooms")}
-            </Link>
-          </li>
-          <li>
-            <Link href="/dining" className={isActive("/dining") ? "active" : ""}>
-              {t("navDining")}
-            </Link>
-          </li>
-          <li>
-            <Link href="/services" className={isActive("/services") ? "active" : ""}>
-              {t("navServices")}
-            </Link>
-          </li>
-          <li>
-            <Link href="/gallery" className={isActive("/gallery") ? "active" : ""}>
-              {t("navGallery")}
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" className={isActive("/about") ? "active" : ""}>
-              {t("navAbout")}
-            </Link>
-          </li>
-          <li>
-            <Link href="/attractions" className={isActive("/attractions") ? "active" : ""}>
-              {t("navAttractions")}
-            </Link>
-          </li>
-          <li>
-            <Link href="/faq" className={isActive("/faq") ? "active" : ""}>
-              {t("navFaq")}
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" className={isActive("/contact") ? "active" : ""}>
-              {t("navContact")}
-            </Link>
+          {primaryLinks.map((link) => (
+            <li key={link.href}>
+              <Link href={link.href} className={isActive(link.href) ? "active" : ""}>
+                {link.label}
+              </Link>
+            </li>
+          ))}
+
+          {/* More Dropdown */}
+          <li className="nav-more-wrapper" ref={moreRef}>
+            <button
+              className={`nav-more-btn ${moreOpen || isMoreActive ? "active" : ""}`}
+              onClick={() => setMoreOpen(!moreOpen)}
+              aria-expanded={moreOpen}
+              aria-haspopup="true"
+            >
+              {lang === "ur" ? "مزید" : "More"}
+              <i className={`fas fa-chevron-down nav-more-arrow ${moreOpen ? "open" : ""}`}></i>
+            </button>
+
+            {moreOpen && (
+              <div className="nav-dropdown">
+                {moreLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`nav-dropdown-item ${isActive(link.href) ? "active" : ""}`}
+                    onClick={() => setMoreOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
           </li>
         </ul>
 
+        {/* Right Controls */}
         <div className="nav-right">
-          {/* Language Switcher */}
+          {/* Language Toggle */}
           <button
-            className="theme-toggle"
+            className="theme-toggle lang-toggle"
             onClick={() => setLang(lang === "en" ? "ur" : "en")}
             aria-label="Toggle language"
-            style={{
-              fontFamily: lang === "en" ? "'Noto Nastaliq Urdu', serif" : "'Outfit', sans-serif",
-              fontSize: "0.85rem",
-              fontWeight: "600",
-            }}
           >
             {lang === "en" ? "اردو" : "EN"}
           </button>
-          
+
           {/* Theme Toggle */}
-          <button className="theme-toggle" id="themeToggle" onClick={toggleTheme} aria-label="Toggle theme">
-            <i className={theme === "dark" ? "fas fa-sun" : "fas fa-moon"} id="themeIcon"></i>
+          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            <i className={theme === "dark" ? "fas fa-sun" : "fas fa-moon"}></i>
           </button>
-          
+
           <Link href="/booking" className="btn btn-primary btn-sm">
             {t("navBookNow")}
           </Link>
         </div>
 
-        <button className={`hamburger ${isOpen ? "active" : ""}`} id="hamburger" onClick={() => setIsOpen(!isOpen)} aria-label="Open menu">
+        {/* Hamburger */}
+        <button
+          className={`hamburger ${isOpen ? "active" : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Open menu"
+        >
           <span></span><span></span><span></span>
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`mobile-menu ${isOpen ? "open" : ""}`} id="mobileMenu">
-        <Link href="/" className={`mobile-link ${isActive("/") ? "active" : ""}`} onClick={closeMenu}>
-          {t("navHome")}
-        </Link>
-        <Link href="/locations" className={`mobile-link ${isActive("/locations") ? "active" : ""}`} onClick={closeMenu}>
-          {t("navLocations")}
-        </Link>
-        <Link href="/rooms" className={`mobile-link ${isActive("/rooms") ? "active" : ""}`} onClick={closeMenu}>
-          {t("navRooms")}
-        </Link>
-        <Link href="/dining" className={`mobile-link ${isActive("/dining") ? "active" : ""}`} onClick={closeMenu}>
-          {t("navDining")}
-        </Link>
-        <Link href="/services" className={`mobile-link ${isActive("/services") ? "active" : ""}`} onClick={closeMenu}>
-          {t("navServices")}
-        </Link>
-        <Link href="/gallery" className={`mobile-link ${isActive("/gallery") ? "active" : ""}`} onClick={closeMenu}>
-          {t("navGallery")}
-        </Link>
-        <Link href="/about" className={`mobile-link ${isActive("/about") ? "active" : ""}`} onClick={closeMenu}>
-          {t("navAbout")}
-        </Link>
-        <Link href="/attractions" className={`mobile-link ${isActive("/attractions") ? "active" : ""}`} onClick={closeMenu}>
-          {t("navAttractions")}
-        </Link>
-        <Link href="/faq" className={`mobile-link ${isActive("/faq") ? "active" : ""}`} onClick={closeMenu}>
-          {t("navFaq")}
-        </Link>
-        <Link href="/contact" className={`mobile-link ${isActive("/contact") ? "active" : ""}`} onClick={closeMenu}>
-          {t("navContact")}
-        </Link>
+      {/* Mobile Menu — all links */}
+      <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
+        {[...primaryLinks, ...moreLinks].map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`mobile-link ${isActive(link.href) ? "active" : ""}`}
+            onClick={closeMenu}
+          >
+            {link.label}
+          </Link>
+        ))}
         <Link href="/booking" className="btn btn-primary mobile-btn" onClick={closeMenu}>
           {t("navBookOnline")}
         </Link>

@@ -77,6 +77,42 @@ export default function AttractionsPage() {
         ? "خریداری اور بچوں کے کھیل کود کے لیے بہترین انڈور شاپنگ مال۔"
         : "Ideal for indoor family recreation and high-end shopping.",
     },
+    {
+      title: lang === "ur" ? "مینار پاکستان" : "Minar-e-Pakistan",
+      desc: lang === "ur"
+        ? "1960 میں تعمیر کردہ قومی یادگار جہاں 23 مارچ 1940 کو تاریخی قرارداد پاکستان منظور کی گئی تھی۔ اندر سیڑھیاں چڑھ کر لاہور کا پرانا شہر دیکھا جا سکتا ہے۔"
+        : "This iconic national monument marks the site where the Pakistan Resolution was passed in 1940. Climb to the top for a panoramic view of historical Lahore's walled city.",
+      image: "images/hotel_lobby.jpg",
+      style: { filter: "brightness(0.85) sepia(0.2)" },
+      distance: lang === "ur" ? "22 منٹ (13 کلومیٹر)" : "22 mins (13 km)",
+      tip: lang === "ur"
+        ? "صبح 9 بجے سے پہلے جائیں — کم بھیڑ ہوتی ہے اور تصویریں بھی اچھی آتی ہیں۔"
+        : "Arrive before 9 AM for fewer crowds and better photography conditions.",
+    },
+    {
+      title: lang === "ur" ? "جہانگیر کا مقبرہ" : "Tomb of Jahangir",
+      desc: lang === "ur"
+        ? "مغل بادشاہ نورالدین جہانگیر کا شاندار مقبرہ جو 17ویں صدی کی مغلیہ فن تعمیر کا بہترین نمونہ ہے — سنگِ مرمر اور جڑاؤ کام کے ساتھ نقش و نگار سے مزین۔"
+        : "The stunning 17th-century Mughal mausoleum of Emperor Jahangir, featuring intricate marble inlay work, frescoed ceilings, and lush Charbagh gardens.",
+      image: "images/standard_details.jpg",
+      style: {},
+      distance: lang === "ur" ? "30 منٹ (18 کلومیٹر)" : "30 mins (18 km)",
+      tip: lang === "ur"
+        ? "باغ میں پکنک کے لیے چادر اور کھانا ساتھ لے جائیں — خوبصورت اور پرسکون ماحول ہے۔"
+        : "Pack a picnic and enjoy the peaceful Charbagh garden around the mausoleum.",
+    },
+    {
+      title: lang === "ur" ? "گلبرگ اور لبرٹی مارکیٹ" : "Gulberg & Liberty Market",
+      desc: lang === "ur"
+        ? "لاہور کا سب سے مشہور شاپنگ اور تفریح کا علاقہ — کپڑے، جوتے، زیورات، کتابیں اور پاکستانی ملبوسات کے لیے بہترین۔ بہترین ریسٹورنٹس بھی قدم قدم پر ملیں گے۔"
+        : "The most vibrant commercial and social hub of Lahore. Perfect for traditional Pakistani clothing, footwear, jewellery, street food, and some of the city's finest restaurants.",
+      image: "images/dining_area.jpg",
+      style: { filter: "brightness(1.05) saturate(1.2)" },
+      distance: lang === "ur" ? "8 منٹ (3 کلومیٹر)" : "8 mins (3 km)",
+      tip: lang === "ur"
+        ? "ہفتے کے آخر میں شام 6-9 بجے کے درمیان جائیں — زیادہ دکانیں کھلی ہوتی ہیں اور رونق بھی زیادہ ہوتی ہے۔"
+        : "Visit on weekend evenings between 6–9 PM for the best shopping atmosphere and street food experience.",
+    },
   ];
 
   return (

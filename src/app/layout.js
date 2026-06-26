@@ -3,12 +3,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import PageLoader from "@/components/PageLoader";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata = {
-  title: "The Comfort Inn — Luxury Guest House Lahore",
-  description: "Boutique luxury guest house in Lahore, Pakistan. Offering standard rooms, deluxe suites, family suites, high-speed Wi-Fi, and premium dining.",
-  keywords: "guest house, Lahore, hotel, booking, accommodation, Comfort Inn, Pakistan, luxury lodging",
+  title: "The Heritage Manor — Luxury Guest Houses Pakistan",
+  description: "Premium boutique luxury guest houses in Lahore, Karachi, Islamabad, and Murree. Offering standard rooms, deluxe suites, family villas, high-speed Wi-Fi, and live BBQ dining.",
+  keywords: "guest house, Lahore, Karachi, Islamabad, Murree, hotel, booking, accommodation, Heritage Manor, Pakistan, luxury lodging",
 };
 
 export default function RootLayout({ children }) {
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
             {children}
           </main>
           <Footer />
+          <WhatsAppButton />
         </LanguageProvider>
       </body>
     </html>

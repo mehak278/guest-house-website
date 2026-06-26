@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function ContactPage() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");

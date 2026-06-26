@@ -7,16 +7,10 @@ export default function PageLoader() {
   const [isRendered, setIsRendered] = useState(true);
 
   useEffect(() => {
-    // Fade out loader
-    const fadeTimer = setTimeout(() => {
-      setIsVisible(false);
-    }, 600);
-
-    // Completely remove from DOM
-    const removeTimer = setTimeout(() => {
-      setIsRendered(false);
-    }, 1200);
-
+    // Start fade-out very quickly — 250ms
+    const fadeTimer = setTimeout(() => setIsVisible(false), 250);
+    // Remove from DOM after fade completes — 600ms total
+    const removeTimer = setTimeout(() => setIsRendered(false), 600);
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);

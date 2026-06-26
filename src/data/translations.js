@@ -16,7 +16,7 @@ export const TRANSLATIONS = {
 
     // Hero
     heroTagline: "Welcome to Luxury & Peace",
-    heroTitle: "The Comfort Inn",
+    heroTitle: "The Heritage Manor",
     heroSubtitle: "Experience a serene escape in the heart of Lahore. Premium rooms, modern comforts, and exceptional Pakistani hospitality.",
     heroExplore: "Explore Rooms",
     heroBook: "Book Stay",
@@ -58,7 +58,7 @@ export const TRANSLATIONS = {
     footerEmail: "info@thecomfortinn.com",
     footerAddress: "123 Main Street, Lahore, Pakistan",
     footerTimings: "Check-in: 2:00 PM | Check-out: 12:00 PM",
-    footerCopy: "© 2026 The Comfort Inn. All rights reserved.",
+    footerCopy: "© 2026 The Heritage Manor. All rights reserved.",
     footerPrivacy: "Privacy Policy",
     footerTerms: "Terms of Service",
 
@@ -203,7 +203,7 @@ export const TRANSLATIONS = {
 
     // Hero
     heroTagline: "پرسکون اور پرتعیش دنیا میں خوش آمدید",
-    heroTitle: "دی کمفرٹ اِن",
+    heroTitle: "دی ہیریٹیج مینر",
     heroSubtitle: "لاہور کے دل میں ایک پرسکون رہائش کا تجربہ۔ بہترین کمرے، جدید سہولیات، اور شاندار پاکستانی مہمان نوازی۔",
     heroExplore: "کمرے دیکھیں",
     heroBook: "بکنگ کریں",
@@ -214,7 +214,7 @@ export const TRANSLATIONS = {
     // Intro Home
     introLabel: "ہماری کہانی",
     introTitle: "ہر مسافر کے لیے آرام دہ رہائش",
-    introDesc1: "لاہور کے پرسکون رہائشی علاقے میں واقع، دی کمفرٹ اِن خوبصورت فرنشڈ کمرے، صاف ستھرا ماحول، اور ہر وقت دستیاب عملہ فراہم کرتا ہے۔ چاہے آپ کاروباری سفر پر ہوں، خاندانی تفریح پر ہوں، یا ہفتے کے آخر میں آرام کے لیے، ہم آپ کو گھر جیسا سکون فراہم کرتے ہیں۔",
+    introDesc1: "لاہور کے پرسکون رہائشی علاقے میں واقع، دی ہیریٹیج مینر خوبصورت فرنشڈ کمرے، صاف ستھرا ماحول، اور ہر وقت دستیاب عملہ فراہم کرتا ہے۔ چاہے آپ کاروباری سفر پر ہوں، خاندانی تفریح پر ہوں، یا ہفتے کے آخر میں آرام کے لیے، ہم آپ کو گھر جیسا سکون فراہم کرتے ہیں۔",
     introDesc2: "ہر کمرے کو کلاسیکی لکڑی کے کام، پرتعیش بستر، دلکش روشنیوں اور جدید سہولیات (اے سی، نجی باتھ روم، اسمارٹ ٹی وی) کے ساتھ ڈیزائن کیا گیا ہے۔ آمد پر ہماری خاص روایتی کشمیری چائے سے لطف اندوز ہوں!",
     directorTitle: "ڈائریکٹر گیسٹ ہاؤس",
     yearsStat: "سالہ مہمان نوازی",
@@ -230,7 +230,7 @@ export const TRANSLATIONS = {
     // Testimonials
     testLabel: "مہمانوں کی رائے",
     testTitle: "ہمارے مہمانوں کے تاثرات",
-    testDesc: "ان مسافروں کے تاثرات پڑھیں جنہوں نے دی کمفرٹ اِن کو اپنا دوسرا گھر بنایا۔",
+    testDesc: "ان مسافروں کے تاثرات پڑھیں جنہوں نے دی ہیریٹیج مینر کو اپنا دوسرا گھر بنایا۔",
 
     // CTA
     ctaTitle: "کیا آپ بکنگ کے لیے تیار ہیں؟",
@@ -245,7 +245,7 @@ export const TRANSLATIONS = {
     footerEmail: "info@thecomfortinn.com",
     footerAddress: "123 مین اسٹریٹ، لاہور، پاکستان",
     footerTimings: "آمد کا وقت: 2:00 PM | رخصتی کا وقت: 12:00 PM",
-    footerCopy: "© 2026 دی کمفرٹ اِن۔ جملہ حقوق محفوظ ہیں۔",
+    footerCopy: "© 2026 دی ہیریٹیج مینر۔ جملہ حقوق محفوظ ہیں۔",
     footerPrivacy: "رازداری کی پالیسی",
     footerTerms: "شرائط و ضوابط",
 

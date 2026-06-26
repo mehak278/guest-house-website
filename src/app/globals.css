@@ -423,6 +423,95 @@ img {
   background: var(--border);
 }
 
+/* ─── "More" Dropdown ─── */
+.nav-more-wrapper {
+  position: relative;
+}
+
+.nav-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.nav-more-btn:hover,
+.nav-more-btn.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar.scrolled .nav-more-btn {
+  color: var(--text-muted);
+}
+
+.navbar.scrolled .nav-more-btn:hover,
+.navbar.scrolled .nav-more-btn.active {
+  color: var(--primary);
+  background: var(--bg-alt);
+}
+
+.nav-more-arrow {
+  font-size: 0.7rem;
+  transition: transform var(--transition-fast);
+}
+
+.nav-more-arrow.open {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 8px;
+  min-width: 180px;
+  z-index: 1100;
+  animation: dropdownIn 0.18s ease;
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.nav-dropdown-item {
+  display: block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.nav-dropdown-item:hover,
+.nav-dropdown-item.active {
+  background: var(--bg-alt);
+  color: var(--primary);
+}
+
+.lang-toggle {
+  font-family: 'Noto Nastaliq Urdu', 'Outfit', sans-serif;
+  font-size: 0.85rem !important;
+  font-weight: 700;
+  min-width: 44px;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -2882,5 +2971,200 @@ img {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+}
+
+/* ─────────────────────────────────────────────
+   WHATSAPP FLOATING BUTTON
+───────────────────────────────────────────── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 900;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: transform var(--transition), box-shadow var(--transition);
+  animation: waBounce 2s ease-in-out infinite;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+  animation: none;
+}
+
+@keyframes waBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: var(--shadow-md);
+}
+
+.whatsapp-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: var(--primary);
+}
+
+[dir="rtl"] .whatsapp-float {
+  right: auto;
+  left: 28px;
+}
+
+[dir="rtl"] .whatsapp-tooltip {
+  right: auto;
+  left: calc(100% + 12px);
+}
+
+[dir="rtl"] .whatsapp-tooltip::after {
+  left: auto;
+  right: 100%;
+  border-left-color: transparent;
+  border-right-color: var(--primary);
+}
+
+/* ─────────────────────────────────────────────
+   TRUST BADGES / QUICK-INFO STRIP
+───────────────────────────────────────────── */
+.trust-strip {
+  background: var(--primary);
+  padding: 14px 0;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .trust-strip {
+  background: #0d0a08;
+}
+
+.trust-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.trust-item i {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.trust-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 600px) {
+  .trust-divider { display: none; }
+  .trust-strip-inner { gap: 20px; }
+}
+
+/* ─────────────────────────────────────────────
+   QUICK BOOKING BAR (Home Page Hero)
+───────────────────────────────────────────── */
+.quick-book-bar {
+  position: relative;
+  z-index: 3;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  margin: -30px auto 0;
+  max-width: 900px;
+}
+
+.quick-book-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.quick-book-field label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-light);
+}
+
+.quick-book-field input,
+.quick-book-field select {
+  background: none;
+  border: none;
+  border-bottom: 1.5px solid var(--border);
+  padding: 6px 0;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  width: 100%;
+  transition: border-color var(--transition-fast);
+}
+
+.quick-book-field input:focus,
+.quick-book-field select:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+.quick-book-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+}
+
+@media (max-width: 768px) {
+  .quick-book-bar {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: -20px;
+    border-radius: var(--radius);
+    padding: 16px;
+  }
+  .quick-book-divider { display: none; }
+  .quick-book-field { min-width: 100%; }
 }
 

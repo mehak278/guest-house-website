@@ -25,40 +25,56 @@ export default function Locations() {
       name: t("branchLahoreName"),
       desc: t("branchLahoreDesc"),
       image: "images/hotel_lobby.jpg",
-      address: lang === "ur" ? "123 مین گلبرگ، لاہور، پاکستان" : "123 Main Gulberg, Lahore, Pakistan",
-      features: lang === "ur" 
-        ? ["گلبرگ III سینٹرل لوکیشن", "باربی کیو چھت لاؤنج", "شاندار ہریالی", "24/7 سیکیورٹی"]
-        : ["Gulberg III Central Location", "Rooftop BBQ Area", "Lush Greenery Garden", "24/7 Elite Security"],
+      address: lang === "ur" ? "123 مین گلبرگ III، لاہور، پاکستان" : "123 Main Gulberg III, Lahore, Pakistan",
+      phone: "+92 300 0000000",
+      checkin: "2:00 PM",
+      checkout: "12:00 PM",
+      badge: "LAHORE",
+      features: lang === "ur"
+        ? ["گلبرگ III سینٹرل لوکیشن", "چھت پر باربی کیو لاؤنج", "شاندار ہریالی باغ", "24/7 سیکیورٹی گارڈ", "مفت پارکنگ"]
+        : ["Gulberg III Central Location", "Rooftop BBQ Lounge", "Lush Green Garden", "24/7 Security Guard", "Free Parking"],
     },
     {
       id: "islamabad",
       name: t("branchIslamabadName"),
       desc: t("branchIslamabadDesc"),
       image: "images/islamabad_branch.jpg",
-      address: lang === "ur" ? "ایف 7 مرکز، اسلام آباد، پاکستان" : "F-7 Markaz, Islamabad, Pakistan",
+      address: lang === "ur" ? "F-7 مرکز، اسلام آباد، پاکستان" : "F-7 Markaz, Islamabad, Pakistan",
+      phone: "+92 321 0000000",
+      checkin: "2:00 PM",
+      checkout: "12:00 PM",
+      badge: "ISLAMABAD",
       features: lang === "ur"
-        ? ["مارگلہ پہاڑیوں کا منظر", "100Mbps تیز انٹرنیٹ", "کاروباری کانفرنس ہال", "خاموش اور پرسکون ماحول"]
-        : ["Margalla Hills Scenic View", "100Mbps Ultra-Fast Wi-Fi", "Business Conference Room", "Quiet Residential Sector"],
+        ? ["مارگلہ پہاڑیوں کا شاندار منظر", "100Mbps تیز انٹرنیٹ", "کانفرنس روم دستیاب", "پرسکون رہائشی سیکٹر", "مفت پارکنگ"]
+        : ["Margalla Hills Scenic View", "100Mbps Fiber Wi-Fi", "Business Conference Room", "Quiet F-7 Residential Sector", "Free Parking"],
     },
     {
       id: "karachi",
       name: t("branchKarachiName"),
       desc: t("branchKarachiDesc"),
       image: "images/dining_area.jpg",
-      address: lang === "ur" ? "کلفٹن بلاک 4، کراچی، پاکستان" : "Block 4 Clifton, Karachi, Pakistan",
+      address: lang === "ur" ? "بلاک 4 کلفٹن، کراچی، پاکستان" : "Block 4 Clifton, Karachi, Pakistan",
+      phone: "+92 333 0000000",
+      checkin: "2:00 PM",
+      checkout: "12:00 PM",
+      badge: "KARACHI",
       features: lang === "ur"
-        ? ["سمندر کا شاندار نظارہ", "ساحلی ہوائی لان", "پاور جنریٹر بیک اپ", "کلفٹن شاپنگ ایریاز کے قریب"]
-        : ["Stunning Sea View Breeze", "Coastal View Outdoor Deck", "100% Power Generator Backup", "Close to Clifton Shopping Hubs"],
+        ? ["سمندر کا شاندار نظارہ", "ساحلی ہوائی بالکونی", "پاور جنریٹر بیک اپ", "کلفٹن شاپنگ ایریا کے قریب", "نجی سوئمنگ پول"]
+        : ["Stunning Sea View Terrace", "Coastal Breeze Balcony", "100% Generator Power Backup", "Near Clifton Shopping", "Private Pool Access"],
     },
     {
       id: "murree",
       name: t("branchMurreeName"),
       desc: t("branchMurreeDesc"),
       image: "images/murree_branch.jpg",
-      address: lang === "ur" ? "مال روڈ نزد پائن ویو، مری، پاکستان" : "Main Mall Road, Murree, Pakistan",
+      address: lang === "ur" ? "مال روڈ، مری، پنجاب، پاکستان" : "Main Mall Road, Murree, Punjab, Pakistan",
+      phone: "+92 345 0000000",
+      checkin: "2:00 PM",
+      checkout: "12:00 PM",
+      badge: "MURREE",
       features: lang === "ur"
-        ? ["مال روڈ پر واقع", "مرکزی ہیٹنگ سسٹم", "کشمیری چائے کا لاؤنج", "پائن کے جنگلات اور پہاڑ"]
-        : ["Direct Mall Road Access", "Central Radiator Heating", "Kashmiri Chai Fireplace Lounge", "Pine Forest Trekking Trails"],
+        ? ["مال روڈ سے براہ راست رسائی", "مرکزی ہیٹنگ سسٹم", "لکڑی کا فائر پلیس", "کشمیری چائے لاؤنج", "پائن کے جنگل میں پیدل سیر"]
+        : ["Direct Mall Road Access", "Central Radiator Heating", "Classic Wood Fireplace", "Kashmiri Chai Lounge", "Pine Forest Trekking Trails"],
     },
   ];
 
@@ -88,10 +104,20 @@ export default function Locations() {
                 <div className="branch-info">
                   <h3>{branch.name}</h3>
                   <p className="branch-desc">{branch.desc}</p>
+
                   <p className="branch-address">
-                    <i className="fas fa-directions"></i> <span>{branch.address}</span>
+                    <i className="fas fa-map-marker-alt"></i> <span>{branch.address}</span>
                   </p>
-                  
+                  <p className="branch-address" style={{ marginBottom: "4px" }}>
+                    <i className="fas fa-phone-alt"></i> <span>{branch.phone}</span>
+                  </p>
+                  <p className="branch-address" style={{ marginBottom: "20px" }}>
+                    <i className="fas fa-clock"></i>
+                    <span>
+                      {lang === "ur" ? "آمد" : "Check-in"}: {branch.checkin} &nbsp;|&nbsp; {lang === "ur" ? "رخصتی" : "Check-out"}: {branch.checkout}
+                    </span>
+                  </p>
+
                   <div className="branch-features-list">
                     {branch.features.map((feat, idx) => (
                       <span key={idx} className="branch-feat-item">
@@ -100,10 +126,19 @@ export default function Locations() {
                     ))}
                   </div>
 
-                  <div className="branch-footer-cta">
-                    <Link href={`/rooms?location=${branch.id}`} className="btn btn-primary btn-md">
-                      {lang === "ur" ? "کمرے اور سوئٹس دیکھیں" : "Explore Rooms in Branch"}
+                  <div className="branch-footer-cta" style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginTop: "8px" }}>
+                    <Link href={`/rooms?location=${branch.id}`} className="btn btn-primary btn-sm" style={{ flex: 1 }}>
+                      {lang === "ur" ? "کمرے دیکھیں" : "View Rooms"}
                     </Link>
+                    <a
+                      href={`https://wa.me/923000000000?text=${encodeURIComponent(lang === "ur" ? `السلام علیکم! مجھے ${branch.name} میں بکنگ کروانی ہے۔` : `Hello! I'd like to book a room at ${branch.name}.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-outline btn-sm"
+                      style={{ flex: 1 }}
+                    >
+                      <i className="fab fa-whatsapp"></i> {lang === "ur" ? "واٹس ایپ" : "WhatsApp"}
+                    </a>
                   </div>
                 </div>
               </div>
