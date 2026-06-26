@@ -22,6 +22,19 @@ export default function RootLayout({ children }) {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
           precedence="default"
         />
+        {/* Prevent theme flash for PageLoader and page backgrounds */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var savedTheme = localStorage.getItem("theme") || "light";
+                  document.documentElement.setAttribute("data-theme", savedTheme);
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
       </head>
       <body>
         <LanguageProvider>
