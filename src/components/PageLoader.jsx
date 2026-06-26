@@ -7,6 +7,17 @@ export default function PageLoader() {
   const [isRendered, setIsRendered] = useState(true);
 
   useEffect(() => {
+    // Check if already loaded in this session to prevent repeated loader screens on navigations
+    if (typeof window !== "undefined" && sessionStorage.getItem("hasLoaded")) {
+      setIsVisible(false);
+      setIsRendered(false);
+      return;
+    }
+
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("hasLoaded", "true");
+    }
+
     // Start fade-out very quickly — 250ms
     const fadeTimer = setTimeout(() => setIsVisible(false), 250);
     // Remove from DOM after fade completes — 600ms total
