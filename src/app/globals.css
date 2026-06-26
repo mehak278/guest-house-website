@@ -362,6 +362,7 @@ img {
 .nav-links {
   display: flex;
   gap: 6px;
+  flex-wrap: nowrap;
 }
 
 .nav-links a {
@@ -2236,6 +2237,14 @@ img {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
+  
+  .nav-links, .nav-right .btn {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
 }
 
 @media (max-width: 900px) {
@@ -2259,13 +2268,6 @@ img {
 }
 
 @media (max-width: 768px) {
-  .nav-links, .nav-right .btn {
-    display: none;
-  }
-  
-  .hamburger {
-    display: flex;
-  }
   
   .hero {
     padding-top: 100px;
